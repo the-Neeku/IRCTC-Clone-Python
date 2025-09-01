@@ -1,0 +1,20 @@
+{% load static %}
+<div class="row mt-2">
+    <div class="col-sm-1 ps-3">
+        <img src="{% static 'IMAGES/secondry-logo.png'%}" alt="logo">
+    </div>
+    <div class="col-sm-10">
+            <div class="row mt-3">
+                <ul style="font-size: 25px">
+                        <li class="ps-4 pe-4"><a class="text-warning fw-bold">Welcome, {{ request.user.username }}</a></li>
+                        <li class="ps-4 pe-4"><a href="/ticket_booking/">Book Ticket</a></li>
+                        <li class="ps-4 pe-4"><a href="/my_bookings/"> My Bookings</a></li>
+                        <li class="ps-4 pe-4"><a href="#">Search Ticket</a></li>
+                        <li class="ps-4 pe-4"><a href="/logout/">Logout</a></li>
+                    </ul>
+                </div>
+    </div>
+    <div class="col-sm-1 pe-3">
+        <img src="{% static 'IMAGES/logo.png'%}" alt="logo" style="float: right;">
+    </div>
+ </div>

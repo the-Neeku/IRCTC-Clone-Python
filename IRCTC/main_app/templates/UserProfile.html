@@ -1,0 +1,60 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block extra_links %}
+<link rel="stylesheet" href="{% static 'CSS/index.css'%}">
+<style>
+.welcome-box {
+    background: linear-gradient(to right, #3a3a9e, #c8c8f1);
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px gray;
+}
+.action-card {
+    transition: 0.3s;
+}
+.action-card:hover {
+    transform: scale(1.05);
+}
+</style>
+{% endblock %}
+{% block title %}IRCTC-User Profile{% endblock %}
+{% block content %}
+    <!-- Welcome Banner -->
+    <div class="container my-5">
+        <div class="welcome-box">
+            <h1>Welcome, {{ request.user.username }}!</h1>
+            <p>Your journey starts here. Book your ticket now.</p>
+        </div>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="container my-4">
+        <div class="row text-center">
+            <div class="col-md-6 mb-4">
+                <a href="/ticket_booking/" class="text-decoration-none">
+                    <div class="card action-card shadow-lg mx-auto" style="width: 90%; height: 3cm;">
+                        <div class="card-body">
+                            <h4 class="card-title">🚆 Book a Ticket</h4>
+                            <p class="card-text">Select your train, source, destination, and travel date.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+           
+
+            <div class="col-md-6 mb-4">
+                <a href="/logout/" class="text-decoration-none">
+                    <div class="card action-card shadow-lg bg-danger text-white mx-auto" style="width: 90%; height: 3cm;">
+                        <div class="card-body">
+                            <h4 class="card-title">🚪 Logout</h4>
+                            <p class="card-text">End your session securely.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

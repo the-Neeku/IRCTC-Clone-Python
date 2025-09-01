@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_links %}
+<link rel="stylesheet" href="{% static 'CSS/registration.css'%}">
+{% endblock %}
+{% block title %}IRCTC-CONTACT{% endblock %}
+{% block content %}
+        <div class="row m-5">
+            <div class="col-sm-8 mx-auto form p-5 pb-3 fs-5" style="box-shadow: 5px 8px 10px #213D77">
+                <form>
+                    <h2 class="mb-5 text-center" style="color: #213D77;">Contect us</h2>
+                    <div class="box">
+                        <label for="Name">Name:</label>
+                        <input type="text"  id="name" placeholder="Enter your mane" required>
+                    </div>
+                    <div class="box">
+                        <label for="phone">Mobile No:</label>
+                        <input type="number" id="phone" placeholder="Enter your mobile" required>
+                    </div>
+                    <div class="box">
+                        <label for="Email">Email:</label>
+                        <input type="email" id="email" placeholder="example@gmail.com" required>
+                    </div>
+                    <input type="radio" value="Complain" name="option" style="margin-left: 30px;" required> Complain
+                    <input type="radio" value="Feedback" name="option" style="margin-left: 30px;" required> Feedback
+                    <textarea id="textarea" placeholder="Write Complain or Feedback..." required></textarea><br><br>
+                    <div class="row mt-3 mb-3 text-center">
+                        <div>
+                            <button class="btn" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+{% endblock %}

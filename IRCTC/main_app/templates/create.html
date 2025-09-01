@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Book Ticket - {{ train.name }} - IRCTC Clone{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title mb-0">Book Ticket</h3>
+    </div>
+    <div class="card-body">
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h4>Train Details</h4>
+                <table class="table">
+                    <tr>
+                        <th>Train:</th>
+                        <td>{{ train.number }} - {{ train.name }}</td>
+                    </tr>
+                    <tr>
+                        <th>From:</th>
+                        <td>{{ train.source.name }} ({{ train.source.code }})</td>
+                    </tr>
+                    <tr>
+                        <th>To:</th>
+                        <td>{{ train.destination.name }} ({{ train.destination.code }})</td>
+                    </tr>
+                    <tr>
+                        <th>Class:</th>
+                        <td>{{ seat_class }}</td>
+                    </tr>
+                    <tr>
+                        <th>Fare per person:</th>
+                        <td>
+                            {% if seat_class == '1AC' %}
+                            ₹{{ train.price_1ac }}
+                            {% elif seat_class == '2AC' %}
+                            ₹{{ train.price_2ac }}
+                            {% elif seat_class == '3AC' %}
+                            ₹{{ train.price_3ac }}
+                            {% else %}
+                            ₹{{ train.price_sleeper }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <form method="post">
+            {% csrf_token %}
+            <h4>Journey Details</h4>
+           
+
+            <h4 class="mt-4">Passenger Details</h4>
+            {{ passenger_formset.management_form }}
+            <div id="passenger-forms">
+                {% for form in passenger_formset %}
+                <div class="passenger-form card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Passenger {{ forloop.counter }}</h5>
+                      
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <button type="button" class="btn btn-outline-primary mb-4" id="add-passenger">Add Passenger</button>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Proceed to Payment</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.getElementById('add-passenger').addEventListener('click', function() {
+    const forms = document.getElementsByClassName('passenger-form');
+    if (forms.length >= 6) {
+        alert('Maximum 6 passengers allowed per booking');
+        return;
+    }
+
+    const formNum = forms.length;
+    const newForm = forms[0].cloneNode(true);
+    newForm.innerHTML = newForm.innerHTML.replace(/passengers-0/g, `passengers-${formNum}`);
+    newForm.innerHTML = newForm.innerHTML.replace(/passengers_set-0/g, `passengers_set-${formNum}`);
+    newForm.querySelector('.card-title').textContent = `Passenger ${formNum + 1}`;
+
+    // Clear form values
+    newForm.querySelectorAll('input').forEach(input => input.value = '');
+    newForm.querySelectorAll('select').forEach(select => select.selectedIndex = 0);
+
+    document.getElementById('passenger-forms').appendChild(newForm);
+
+    // Update total forms
+    const totalForms = document.querySelector('#id_passengers-TOTAL_FORMS');
+    totalForms.value = forms.length + 1;
+});
+</script>
+{% endblock %} 

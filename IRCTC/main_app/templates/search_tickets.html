@@ -1,0 +1,75 @@
+{% extends 'base1.html' %}
+
+
+{% block title %}Search Trains - IRCTC Clone{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title mb-0">Search Trains</h3>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-4">
+                    {{ form.source }}
+                </div>
+                <div class="col-md-4">
+                    {{ form.destination}}
+                </div>
+                <div class="col-md-4">
+                    {{ form.date }}
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <button type="submit" class="btn btn-primary">Search Trains</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% if trains %}
+<div class="card mt-4">
+    <div class="card-header">
+        <h4 class="card-title mb-0">Available Trains</h4>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Train Number</th>
+                        <th>Train Name</th>
+                        <th>Type</th>
+                        <th>Departure</th>
+                        <th>Arrival</th>
+                        <th>Duration</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for train in trains %}
+                    <tr>
+                        <td>{{ train.number }}</td>
+                        <td>{{ train.name }}</td>
+                        <td>{{ train.get_train_type_display }}</td>
+                        <td>{{ train.departure_time }}</td>
+                        <td>{{ train.arrival_time }}</td>
+                        <td>{{ train.duration }}</td>
+                        <td>
+                            <a href="{% url 'trains:detail' train.number %}" class="btn btn-sm btn-primary">View Details</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% elif request.method == 'POST' %}
+<div class="alert alert-info mt-4">
+    No trains found for the selected route and date.
+</div>
+{% endif %}
+{% endblock %} 

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_links %}
+<link rel="stylesheet" href="{% static 'CSS/registration.css' %}">
+{% endblock %}
+{% block title %}IRCTC-login{% endblock %}
+{% block content %}
+        <div class="row mt-5 mb-5">
+            <div class="col-sm-5 mx-auto form p-5 pb-3" style="box-shadow: 5px 8px 10px #213D77">
+                <form action="" method="post">
+                {% csrf_token %}
+                    <h2 class="mb-5 text-center"style="color: #213D77;">Login Your Account</h2>
+                    <div class="row">
+                        <div class="box">
+                            <i class="fa-solid fa-user"></i>
+                            <label for="username"> Username:</label><input type="text" name="username_or_email"
+                                placeholder="Enter username" required>
+                        </div>
+                        <div class="box">
+                            <i class="fa-solid fa-unlock"></i>
+                            <label for="pass"> Password:</label><input type="password" name="password"
+                                placeholder="Enter your password" required>
+                        </div>
+                        <div class="row mt-3 mb-3 text-center">
+                            <div>
+                                <button class="btn" type="submit">Login</button>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row text-center">
+                            <p>Don't have account <a href="registration.html"
+                                    style="font-weight:bold; text-decoration: none;">Register</a></p>
+                            <p><a href="#"><u>Forget Password</u></a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+{% endblock %}

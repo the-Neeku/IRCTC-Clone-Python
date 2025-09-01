@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_links %}
+<link rel="stylesheet" href="{% static 'CSS/registration.css' %}">
+<!-- <link rel="stylesheet" href="{% static 'CSS/form.css' %}"> -->
+{% endblock %}
+{% block title %}IRCTC-Registration{% endblock %}
+{% block content %}
+        <div class="row mt-5 mb-5">
+            <div class="col-sm-8 mx-auto form p-5" style="box-shadow: 5px 8px 10px #213D77">
+                <form action="" method="post">
+                {% csrf_token %}
+                    <h2 class="mb-5 text-center" style="color: #213D77;">Create Your IRCTC Account</h2>
+                    <div style="border: 1px solid #213D77;">
+                        <ol>
+                            <li>
+                                Garbage / Junk values in profile may lead to deactivation of IRCTC account.
+                            </li>
+                            <li>
+                                Opening Advance Reservation Period(ARP) ticket and Opening Tatkal ticket booking for
+                                unauthenticated users is allowed only after 4 days from date of User Registration
+                                (excluding the day of registration ). User may authenticate their user profile with
+                                Aadhaar to book Opening Advance Reservation Period(ARP) ticket and Opening Tatkal
+                                ticket.
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="row">
+                        <div class="box">
+                            <label for="name"><i class="fa-solid fa-user"></i> Username</label><input type="text" name="username"
+                                placeholder="Enter username" required>
+                        </div>
+                        <div class="box">
+                            
+                            <label for="name"><i class="fa-solid fa-id-card"></i> Name:</label><input type="text" name="fullname"
+                                placeholder="Enter full name" required>
+                        </div>
+                        <div class="box">
+                            
+                            <label for="email"><i class="fa-solid fa-envelope"></i> Email:</label><input type="email" name="email" 
+                                placeholder="Enter Email" required>
+                        </div>
+                        <div class="box">
+                            
+                            <label for="mobile"><i class="fa-solid fa-phone"></i> Mobile No:</label><input type="number" name="mobile"
+                                placeholder="Enter mobile number" required>
+                        </div>
+                        <div class="box">
+                            
+                            <label for="pass"><i class="fa-solid fa-unlock"></i> Password:</label><input type="password" name="password" 
+                                placeholder="Create strong password" required>
+                        </div>
+                        <div class="box">
+                            
+                            <label for="cpass"><i class="fa-solid fa-lock"></i> Confirm Password:</label><input type="password" name="confirm_password" placeholder="Confirm password" required>
+                        </div>
+                        <hr>
+                        <div class="row mt-5">
+                            <div class="btn1">
+                                <button class="btn" type="submit" style="float: left;">Submit</button>
+                            </div>
+                            <div class="btn2">
+                                <button class="btn me-2" type="reset" style="float: right;">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+{% endblock %}

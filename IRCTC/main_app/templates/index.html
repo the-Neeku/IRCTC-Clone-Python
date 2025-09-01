@@ -1,0 +1,262 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_links %}
+<link rel="stylesheet" href="{% static 'CSS/index.css'%}">
+{% endblock %}
+{% block title %}IRCTC-HOME{% endblock %}
+{% block content %}
+        <div class="row mt-3 img" style="background-image: url('{% static 'IMAGES/train.jpg'%}');">
+            <div class="col-sm-7">
+                <div class="row mt-5">
+                    <div id="form">
+                        <form action="#" class="bg-light p-3 pt-0 pe-2">
+                            <div class="row">
+                                <div
+                                    style="width: 49%; background:#213D77;color:white; font-size:25; float:left; text-align:center; margin-right: 0.5%;">
+                                    PNR STATUS
+                                </div>
+                                <div
+                                    style="width: 49%; background:#213D77;color:white; font-size:25; float:right; text-align:center; margin-left:0.5%;">
+                                    CHART/VACANCY
+                                </div>
+                            </div>
+                            <div class="row text-center mt-3">
+                                <h2>BOOK TICKET</h2>
+                            </div>
+                            <div class="row">
+                                <div style="width: 59%; font-size:22; float:left;">
+                                    <div class="box">
+                                        <i class="fa fa-location-arrow"></i>
+                                        <label for="from"> FROM</label><input type="text"
+                                            style="width: 73%; float:right" required>
+                                    </div>
+                                    <div class="box">
+                                        <i class="fa fa-map-marker"></i>
+                                        <label for="to"> To</label><input type="text" style="width: 73%; float:right"
+                                            required>
+                                    </div>
+                                    <div class="box">
+                                        <select>
+                                            <option value="#">GENERAL</option>
+                                            <option value="#">LADIES</option>
+                                            <option value="#">LOWER BERTH/SR.CITIZEN</option>
+                                            <option value="#">PERSON WITH DISABILITY</option>
+                                            <option value="#">DUTY PASS</option>
+                                            <option value="#">TATKAL</option>
+                                            <option value="#">PREMIUM TATKAL</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div style="width: 39%; font-size:22; float:right">
+                                    <div class="box">
+                                        <input type="date" class="date" required>
+                                    </div>
+                                    <div class="box">
+                                        <select>
+                                            <option value="#">All Classes</option>
+                                            <option value="#">Anubhuti Class (EA)</option>
+                                            <option value="#">AC First Class (1A)</option>
+                                            <option value="#">Vistadome AC (EV)</option>
+                                            <option value="#">Exec. Chair Car (VC)</option>
+                                            <option value="#">AC 2 Tier (2A)</option>
+                                            <option value="#">First Class (FC)</option>
+                                            <option value="#">AC 3 Tier (3A)</option>
+                                            <option value="#">AC 3 Economy (3E)</option>
+                                            <option value="#">Vistadome Chair Car (VC)</option>
+                                            <option value="#">AC Chair Car (CC)</option>
+                                            <option value="#">Sleeper (SL)</option>
+                                            <option value="#">Vistadome Non AC (VS)</option>
+                                            <option value="#">Second Sitting (2S)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chk g-3">
+                                <div class="chkbx">
+                                    <input type="checkbox"> Person With Disability Concession
+                                </div>
+                                <div class="chkbx">
+                                    <input type="checkbox"> Flexible With Date
+                                </div>
+                                <div class="chkbx">
+                                    <input type="checkbox"> Train With Available Berth
+                                </div>
+                                <div class="chkbx">
+                                    <input type="checkbox"> Railways Pass Concession
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="btn1">
+                                    <button class="btn" type="submit" style="float: left;">Sreach</button>
+                                </div>
+                                <div class="btn2">
+                                    <input class="btn me-2" style="float: right;" type="button"
+                                        value="Easy Booking on AskDISHA">
+                                </div>
+                            </div>
+                        </form>
+                        <div class="bg-light text-center">
+                            <p><span style="color: #0000ff;">Customers can use enhanced interface for their IRCTC
+                                    related queries!!</span>
+                                <a href="https://equery.irctc.co.in"
+                                    style="color: #007ad9;">https://equery.irctc.co.in</a><br>
+                                <span style="color: #ff0000;">Customers Care Numbers : 14646/08044647999
+                                    /08035734999</span><br>
+                                <span style="color: #007ad9;">BEWARE OF FRAUDSTERS: Always download
+                                    official IRCTC
+                                    Rail Connect App from the
+                                    Google
+                                    Play Store or Apple App Store only.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5 text-center mt-4">
+                <h1>INDIAN RALWAYS</h1>
+                <h5>Safety | Security | Punctuality</h5>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-8 text-center mx-auto mt-3 text-dark">
+                <h2>Have you not found the right one?<br />Find a service suitable for you here.</h2>
+            </div>
+        </div>
+        <div class="row text-center mt-5">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-2 mb-3">
+                <a href="#">
+                    <img src="{% static 'IMAGES/airport.png'%}" class="icon-img" /><br />
+                    <label>FLIGHT</label>
+                </a>
+            </div>
+            <div class="col-sm-2 mb-3">
+                <a href="#">
+                    <img src="{% static 'IMAGES/hotel.png'%}" class="icon-img" /><br />
+                    <label>HOTELS</label>
+                </a>
+            </div>
+            <div class="col-sm-2 mb-3">
+                <a href="#">
+                    <img src="{% static 'IMAGES/dishti.png'%}" class="icon-img" /><br />
+                    <label>RAIL DRISHTI</label>
+                </a>
+            </div>
+            <div class="col-sm-2 mb-3">
+                <a href="#">
+                    <img src="{% static 'IMAGES/catering.png'%}" class="icon-img" /><br />
+                    <label>eCATERING</label>
+                </a>
+            </div>
+            <div class="col-sm-2 mb-3">
+                <a href="#">
+                    <img src="{% static 'IMAGES/bus.png'%}" class="icon-img" /><br />
+                    <label>BUS</label>
+                </a>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-2 mb-3">
+                <a href="#">
+                    <img src="{% static 'IMAGES/holidays.png'%}" class="icon-img" /><br />
+                    <label>HOLIDAYS PACKAGES</label>
+                </a>
+            </div>
+            <div class="col-sm-2 mb-3">
+                <a href="#">
+                    <img src="{% static 'IMAGES/tourist-train.png'%}" class="icon-img" /><br />
+                    <label>TOURIST TRAIN</label>
+                </a>
+            </div>
+            <div class="col-sm-2 mb-3">
+                <a href="#">
+                    <img src="{% static 'IMAGES/hill.png'%}" class="icon-img" /><br />
+                    <label>HILL RAILWAYS</label>
+                </a>
+            </div>
+            <div class="col-sm-2 mb-3">
+                <a href="#">
+                    <img src="{% static 'IMAGES/charter-train.png'%}" class="icon-img" /><br />
+                    <label>CHARTER TRAIN</label>
+                </a>
+            </div>
+            <div class="col-sm-2 mb-3">
+                <a href="#">
+                    <img src="{% static 'IMAGES/gallery.png'%}" class="icon-img" /><br />
+                    <label>GALLERY</label>
+                </a>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-sm-12 text-center">
+                <img src="{% static 'IMAGES/banner1.jpeg'%}" alt="" style="width: 70%;">
+            </div>
+        </div>
+        <hr />
+        <div class="row mt-3">
+            <h1 align="center" class="m-3">HOLIDAYS</h1>
+            <div class="cards mt-4">
+                <div class="card">
+                    <img src="{% static '/IMAGES/card1.jpg'%}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Maharajas' Express</h5>
+                        <p class="card-text">Redefining Royalty, Luxury and Comfort, Maharajas' express takes you on a
+                            sojourn to the era of bygone stately splendour of princely states. Sylvan furnishings,
+                            elegant ambience and modern amenities are amalgamated for an “Experience Unsurpassed”. It
+                            has been a winner of “World’s Leading Luxury train” by World Travel Awards consecutively for
+                            last six years.</p>
+                        <a href="#">Read More<i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="{% static '/IMAGES/card2.jpg'%}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">International Packages</h5>
+                        <p class="card-text">Best deals in International Holiday packages, handpicked by IRCTC, for
+                            Thailand, Dubai, Sri Lanka, Hong Kong, China, Macau, Bhutan, Nepal, U.K., Europe, USA,
+                            Australia etc. The packages are inclusive of sightseeing, meals, visa charges and overseas
+                            medical insurance to give you a hassle-free and memorable experience.</p>
+                        <a href="#">Read More<i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="{% static '/IMAGES/card3.jpg'%}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Domestic Air Packages</h5>
+                        <p class="card-text">Be it the spiritual devotee seeking blessings of Tirupati, Shirdi or Mata
+                            Vaishno Devi or the leisure traveller wanting to relish the Blue mountains of North East,
+                            Sand-dunes of Rajasthan, Hamlets of Ladakh, Wonders of Himalayas, Serene lakes or
+                            Picturesque Islands, IRCTC has it all. Discover India through IRCTC!</p>
+                        <a href="#">Read More<i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="{% static '/IMAGES/card4.jpg'%}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Bharat Gaurav Tourist Train</h5>
+                        <p class="card-text">IRCTC operates Bharat Gaurav Tourist Train having AC III-Tier accommodation
+                            on train specially designed to promote domestic tourism in India. This train runs on various
+                            theme based circuits covering pilgrimage and heritage destinations in its itinerary on a 5
+                            days to 20 days trip and showcase India’s rich cultural heritage.</p>
+                        <a href="#">Read More<i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="{% static '/IMAGES/card5.jpg'%}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">MRail Tour Packages</h5>
+                        <p class="card-text">IRCTC offers Exclusive Rail tour packages with confirmed train tickets,
+                            sight-seeing and meals for enchanting Nilgiri Mountains, Darjeeling, Kullu Manali, Kashmir,
+                            Gangtok or divine tours of Mata Vaishno Devi, Rameswaram, Madurai, Shirdi, Tirupati etc.
+                            Holiday packages/ Land packages to these destinations are also available.</p>
+                        <a href="#">Read More<i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="{% static '/IMAGES/HOME_BOTTOM_RIGHT.jpeg'%}" alt="" style="height: 15.8cm; border-radius: 5px;">
+                </div>
+            </div>
+        </div>
+{% endblock %}

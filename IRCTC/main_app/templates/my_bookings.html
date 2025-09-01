@@ -1,0 +1,49 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block extra_links %}
+<link rel="stylesheet" href="{% static 'CSS/index.css'%}">
+{% endblock %}
+{% block title %}My Bookings{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h3 class=" row mb-4 mt-5">📜 My Bookings</h3>
+
+    {% if bookings %}
+        <table class="table table-bordered mt-5  ">
+            <thead>
+                <tr>
+                    <th>PNR</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Journey Date</th>
+                    <th>Seats</th>
+                    <th>Booked At</th>
+                    <th>🎫 Ticket</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for booking in bookings %}
+                <tr>
+                    <td>{{ booking.pnr }}</td>
+                    <td>{{ booking.name }}</td>
+                    <td>{{ booking.email }}</td>
+                    <td>{{ booking.from_station }}</td>
+                    <td>{{ booking.to_station }}</td>
+                    <td>{{ booking.journey_date }}</td>
+                    <td>{{ booking.seats }}</td>
+                    <td>{{ booking.booked_at|date:"d M Y H:i" }}</td>
+                    <td>
+                        <a href="{% url 'download_ticket_pdf' booking.pnr %}" class="btn btn-sm btn-outline-primary">Download PDF</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No bookings found.</p>
+    {% endif %}
+</div>
+{% endblock %}
