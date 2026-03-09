@@ -1,0 +1,107 @@
+.img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 85vh;
+    width: 100%;
+}
+
+#form {
+    width: 80%;
+    height: max-content;
+    margin: auto;
+}
+
+.box {
+    margin: 30px auto;
+    width: 95%;
+    border: 1px solid #213D77;
+    border-radius: 10px;
+    position: relative;
+}
+
+.box input {
+    position: relative;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background: none;
+    width: 100%;
+    font-size: 20px;
+}
+
+.box label {
+    color: #213D77;
+    padding: 0 5px;
+}
+
+.date {
+    padding-left: 5px;
+    text-transform: uppercase;
+}
+
+select {
+    border-radius: 10px;
+    width: 100%;
+    border: none;
+}
+
+.chk {
+    width: 100%;
+    height: max-content;
+}
+
+.chkbx {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.btn {
+    background: #fb792b;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.btn1,
+.btn2 {
+    width: 50%;
+}
+
+i {
+    font-weight: normal;
+    font-size: medium;
+    margin-left: 5px;
+}
+
+.icon-img {
+    height: 100px;
+    width: 100px;
+}
+
+.icon-img:hover {
+    background-color: #213D77;
+    border-radius: 30%;
+}
+
+.cards {
+    width: 85%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: auto;
+}
+
+.card {
+    margin: auto;
+    width: 22rem;
+}
+
+.card-text {
+    height: 5.2cm;
+    text-align: justify;
+    color: black;
+}
+
+.card-body a {
+    font-weight: bold;
+    color: black;
+}
